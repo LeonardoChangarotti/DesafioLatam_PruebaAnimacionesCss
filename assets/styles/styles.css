@@ -1,0 +1,213 @@
+
+
+.grid-container { /*DEBE INCLUIR FLEX O GRID*/
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr; 
+    grid-template-areas:
+      "navbar"
+      "seccionPrincipal"
+      "piedepagina";
+  }
+
+  .menuDesplegado{
+    display: none;
+  }
+  
+  .navbar {
+    grid-area: navbar;
+    background-color:black;
+    margin:0;
+    color: #00FF00;
+    font-weight: 800;
+    font-size: 200%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+  }
+
+  .textoNavbar{
+    margin: 0 1rem; /*crea espacio entre los iconos y el texto que estabn en el navbar*/
+
+  }
+  .iconNombre{
+    display: flex;
+    align-items: center;
+    
+    
+  }
+  
+
+
+  .seccionPrincipal {
+    grid-area: seccionPrincipal;
+    background-image: url("../imgs/pexels-markusspiske-1089438.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
+  }
+
+  .productos{
+    border: 1px #00ff00 solid ;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+   
+  }
+
+  .botonesPadre{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+    
+  }
+
+  .botones{
+    border: 1px #0f0 solid;
+    color: #00FF00;
+  }
+
+  article p {
+    color:#00ff00;
+    font-weight:800 ;
+  }
+  
+  
+
+  .piedepagina {
+    grid-area: piedepagina;
+    background-color: black;
+    color: #00ff00;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+   
+  }
+
+ .iconbars{
+    color:#0f0;
+  }
+  
+  a{text-decoration: none;
+    color: #00FF00;}
+
+@media (min-width: 576px) {    /*AJUSTARSE EN FUNCION A PANTALLA CON MEDIAQUERY*/
+
+    .menuDesplegado{
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: black;
+        color: #00ff00;
+        font-size: 150%;
+        height: 100vh;
+        border: #00FF00;
+        
+    }
+
+ 
+
+    
+
+    .grid-container {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        grid-template-areas:
+          "navbar navbar"
+          "menuDesplegado seccionPrincipal"
+          "menuDesplegado seccionPrincipal"
+          "piedepagina piedepagina"
+          
+          
+      }
+    
+      .iconodebarra{
+        display: none;
+      }
+
+    
+
+      .seccionPrincipal{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap:10px;
+        justify-content: center;
+
+      }
+
+      .productos{
+        gap: 1px;
+        width: 20vw;
+      }
+      
+      .piedepagina{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .botonesPadre{
+        display: none;
+      }
+}
+
+/*a continuacion se asignaran las transiciones y transformaciones a las fotos*/
+
+.img1{
+    transition: width 0.3s ease, height 0.3s ease;
+}
+.img1:hover {
+    width: 280px;
+    height: 280px;
+  }
+
+
+.img2 {
+    opacity: 1;
+    transition: opacity 0.8s ease;
+  }
+.img2:hover {
+    opacity: 0.7;
+  }
+
+
+  
+.img3:hover {
+    transform: rotate(180deg);
+  }
+
+.img4:hover {
+    transform: translateY(-50px);
+   
+  }
+
+.img5 {
+    transition: filter 0.5s ease;
+  }
+  
+.img5:hover {
+    filter: grayscale(100%);
+  }
+
+@keyframes zoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+.img6 {
+    animation: zoom 5s infinite alternate;
+  }
